@@ -7,32 +7,61 @@ import Dados from './src/Dados';
 
 export default function App() {
   return (
-    <view>
-      <Cabecalho />
 
-      <Botao 
-        Logo= "md-game-controller"
-        texto="Jogos"
-        cor="black"
-      />
+    <View> 
+      <View style={styles.container}>
+        <Cabecalho />
 
-      <FlatList
-        horizontal={true}
-        data = {Dados}
-        keyExtractor = {(item) => item.id}
-        renderItem = { ({ item }) => (
-
-        <Jogo
-          titulo ={item.nome}
-          imagem ={item.imagem}
-          valor ={item.valor}
+        <Botao 
+          Logo= "md-game-controller"
+          texto="Jogos"
+          cor="black"
         />
 
-        )}
+        <FlatList
+          horizontal={true}
+          data = {Dados}
+          keyExtractor = {(item) => item.id}
+          renderItem = { ({ item }) => (
 
-        />
+          <Jogo
+            titulo ={item.nome}
+            imagem ={item.imagem}
+            valor ={item.valor}
+          />
 
-    </view>
+          )}
+
+          />
+
+      </View>
+
+      <View style={styles.container}>
+
+        <Botao
+            Logo="md-wallet"
+            texto="Menor preço"
+            cor="green"
+          />
+
+        <FlatList
+          horizontal={true}
+          data = {Dados}
+          keyExtractor = {(item) => item.id}
+          renderItem = { ({ item }) => (
+
+          <Jogo
+            titulo ={item.nome}
+            imagem ={item.imagem}
+            valor ={item.valor}
+          />
+
+          )}
+
+          />
+
+        </View>
+      </View>
   );
 }
 
@@ -40,8 +69,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'space-between',
     justifyContent: 'center',
+    marginBottom: 100
   },
 });
 

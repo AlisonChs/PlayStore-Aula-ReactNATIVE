@@ -30,7 +30,6 @@ const estilo = StyleSheet.create({
       flexDirection:'row',
       marginBottom:10,
       justifyContent:"center"
-  
     },
     textoBotao:{
         color:'white',
